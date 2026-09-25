@@ -1,0 +1,17 @@
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wikipedia-aqa:latest
+    container_name: wikipedia-aqa
+    env_file:
+      - .env
+    environment:
+      CI: 'true'
+    ipc: host
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+      - ./playwright/.auth:/app/playwright/.auth
+    command: npx playwright test
