@@ -1,0 +1,33 @@
+{
+  "name": "wikipedia-aqa",
+  "version": "1.0.0",
+  "description": "Playwright E2E automation for Wikipedia interface language switching",
+  "private": true,
+  "scripts": {
+    "pw:test": "npx playwright test",
+    "pw:debug": "npx playwright test --debug",
+    "pw:ui": "npx playwright test --ui",
+    "pw:report": "npx playwright show-report",
+    "pw:ts:build": "npx tsc -p playwright/tsconfig.json",
+    "pw:browsers:install": "npx playwright install --with-deps chromium",
+    "lint": "eslint playwright",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml}\"",
+    "docker:test": "docker compose up --build --abort-on-container-exit --exit-code-from tests",
+    "docker:clean": "docker compose down --rmi local --volumes --remove-orphans"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.2",
+    "@playwright/test": "1.61.1",
+    "@types/node": "22.14.1",
+    "@typescript-eslint/eslint-plugin": "8.53.0",
+    "@typescript-eslint/parser": "8.53.0",
+    "dotenv": "17.3.1",
+    "eslint": "9.39.2",
+    "eslint-plugin-playwright": "2.10.4",
+    "prettier": "3.8.4",
+    "typescript": "5.8.3"
+  }
+}

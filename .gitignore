@@ -1,0 +1,21 @@
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.vscode
+.history
+
+# secrets
+.env
+
+# playwright artifacts
+/playwright-report/
+/test-results/
+/playwright/.auth/
+/playwright/dist/
+/blob-report/
+
+# OS
+.DS_Store
+**/.DS_Store
